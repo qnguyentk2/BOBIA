@@ -1,0 +1,100 @@
+.loading-wrapper {
+  &.hide {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  @keyframes loader {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading-container {
+    background: white;
+    height: 100%;
+    left: 0;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+
+    .loading-text {
+      color: black;
+      display: block;
+      font-family: sans-serif;
+      font-size: 20px;
+      height: 30px;
+      left: 50%;
+      margin: -7px 0 0 -45px;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      width: 100px;
+    }
+
+    .loading-content {
+      -webkit-animation: loader 2s linear infinite;
+      -moz-animation: loader 2s linear infinite;
+      -o-animation: loader 2s linear infinite;
+      animation: loader 2s linear infinite;
+      border: 3px solid transparent;
+      border-bottom-color: #4d658d;
+      border-radius: 50%;
+      border-top-color: #4d658d;
+      display: block;
+      height: 170px;
+      left: 50%;
+      margin: -85px 0 0 -85px;
+      position: relative;
+      top: 50%;
+      width: 170px;
+
+      &:after {
+        -webkit-animation: loader 1.5s linear infinite;
+        animation: loader 1.5s linear infinite;
+        -moz-animation: loader 2s linear infinite;
+        -o-animation: loader 2s linear infinite;
+        border: 3px solid transparent;
+        border-bottom-color: #84417c;
+        border-radius: 50%;
+        border-top-color: #84417c;
+        bottom: 15px;
+        content: '';
+        left: 15px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+      }
+
+      &:before {
+        -webkit-animation: loader 3s linear infinite;
+        -moz-animation: loader 2s linear infinite;
+        -o-animation: loader 2s linear infinite;
+        animation: loader 3s linear infinite;
+        border: 3px solid transparent;
+        border-bottom-color: #d4cc6a;
+        border-radius: 50%;
+        border-top-color: #d4cc6a;
+        bottom: 5px;
+        content: '';
+        left: 5px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+    }
+  }
+}

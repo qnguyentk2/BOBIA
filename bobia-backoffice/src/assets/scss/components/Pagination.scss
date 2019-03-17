@@ -1,0 +1,102 @@
+$color-black: #000;
+$color-white: #fff;
+$color-main: #00a687;
+$color-main-light: #06caa5;
+$color-text: #424242;
+$color-alto: #dedede;
+$color-scorpion: #605e5e;
+$color-gray: #8a8a8a;
+$color-trout: #495057;
+$color-silver: #a8a8a8;
+$color-corduroy: #696a6a;
+$color-dove-gray: #6d6d6d;
+$color-alabaster: #f8f8f8;
+$color-nobel: #b4b4b4;
+$color-dusty-gray: #979797;
+$color-gallery: #ededed;
+$color-mercury: #e6e5e5;
+$color-alabaster: #f7f7f7;
+$color-white-linen: #f7ece4;
+$color-mandy: #ed5565;
+$color-google: #d34836;
+$color-facebook: #4b76bd;
+$colro-silver-chalice: #a2a1a1;
+$color-gray: #7e7e7e;
+$color-jazzberry-jam: #c00d6b;
+$color-tahiti-gold: #ee870d;
+$color-alpha-white: rgba(255, 255, 255, 0.25);
+$color-alpha-main: rgba(0, 166, 135, 0.15);
+
+.Pagination {
+  font-size: 1rem;
+  text-align: right;
+  margin-top: 20px;
+  clear: both;
+  overflow: hidden;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 10px;
+
+    &:hover {
+      a {
+        color: $color-main;
+      }
+    }
+
+    .middle {
+      margin: 20px;
+    }
+
+    &.active {
+      a {
+        color: $color-main;
+      }
+    }
+
+    a {
+      color: $color-nobel;
+
+      .ico {
+        margin-right: 0;
+        color: $color-white;
+      }
+    }
+
+    &.prev {
+      background-color: $color-nobel;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      text-align: center;
+      line-height: 22px;
+
+      a {
+        color: $color-white;
+        margin-right: 0;
+      }
+    }
+
+    &.next {
+      background-color: $color-nobel;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      text-align: center;
+      line-height: 22px;
+
+      a {
+        color: $color-white;
+        margin-right: 0;
+      }
+    }
+  }
+}

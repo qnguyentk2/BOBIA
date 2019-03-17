@@ -1,0 +1,65 @@
+.Banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  position: relative;
+  height: 572px;
+
+  &.sticky {
+    background-position: bottom;
+    height: 74px;
+
+    .Banner-content {
+      display: none;
+    }
+
+    .Banner__btn {
+      display: block;
+    }
+  }
+
+  &-content {
+    text-align: center;
+  }
+
+  &-description {
+    &__title {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    &__sub-title {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+  }
+
+  &-button {
+    margin-top: 50px;
+
+    &__btn {
+      font-size: 1.5rem;
+      min-width: 213px;
+    }
+  }
+
+  &__btn {
+    display: none;
+    bottom: 25px;
+    margin: 0 0 0 -22px;
+    font-size: 2rem;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+
+    &__arrow-up {
+      color: white;
+      margin: 0;
+    }
+  }
+}
