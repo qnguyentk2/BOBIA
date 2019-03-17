@@ -1,0 +1,14 @@
+.Block {
+  margin-bottom: 25px;
+  // overflow: hidden;
+}
+
+.Block-Appoints {
+  background-color: transparent;
+}
+
+@include media-breakpoint-up(md) {
+  .Block {
+    margin-bottom: 40px;
+  }
+}

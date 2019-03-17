@@ -1,0 +1,610 @@
+$saturnSize: 152px;
+$saturnRingSize: 330px;
+$saturnRingWidth: 50px;
+$saturnRingSegments: 50;
+
+$titanSize: 84px;
+
+%absPosition {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%eye {
+  @extend %absPosition;
+
+  width: 6px;
+  height: 6px;
+  background: #53487a;
+  border-radius: 10px;
+  bottom: 34px;
+
+  animation: blink 1s 0s infinite linear;
+
+  &.eye--left {
+    left: -80px;
+  }
+
+  &.eye--right {
+    left: 80px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes saturn {
+  0% {
+    left: 0;
+  }
+
+  25% {
+    left: -40px;
+  }
+
+  50% {
+    left: 0px;
+  }
+
+  75% {
+    left: 40px;
+  }
+}
+
+@keyframes ring {
+  0% {
+    left: 0;
+    transform: rotateX(84deg) rotateY(8deg);
+  }
+
+  25% {
+    left: 70px;
+  }
+
+  50% {
+    left: 0px;
+    transform: rotateX(80deg) rotateY(-8deg);
+  }
+
+  75% {
+    left: -70px;
+  }
+
+  100% {
+    left: 0px;
+    transform: rotateX(84deg) rotateY(8deg);
+  }
+}
+
+@keyframes ringShadow {
+  0% {
+    left: -100px;
+  }
+
+  25% {
+    left: -40px;
+  }
+
+  50% {
+    left: -100px;
+  }
+
+  75% {
+    left: -140px;
+  }
+
+  100% {
+    left: -100px;
+  }
+}
+
+@keyframes face {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 200px;
+  }
+}
+
+@keyframes faceTilt {
+  0% {
+    transform: rotate(12deg);
+  }
+
+  50% {
+    transform: rotate(-12deg);
+  }
+
+  100% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes ringTwo {
+  0% {
+    transform: rotateX(84deg);
+  }
+
+  50% {
+    transform: rotateX(76deg);
+  }
+
+  100% {
+    transform: rotateX(84deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    height: 6px;
+  }
+
+  40% {
+    height: 6px;
+  }
+
+  50% {
+    height: 0px;
+  }
+
+  60% {
+    height: 6px;
+  }
+
+  100% {
+    height: 6px;
+  }
+}
+
+@keyframes titanWrap {
+  0% {
+    transform: translateY(370px);
+  }
+
+  33% {
+    transform: translateY(370px);
+  }
+
+  38% {
+    transform: translateY(400px);
+  }
+
+  43% {
+    transform: translateY(370px);
+  }
+
+  73% {
+    transform: translateY(370px);
+  }
+
+  78% {
+    transform: translateY(400px);
+  }
+
+  83% {
+    transform: translateY(370px);
+  }
+
+  100% {
+    transform: translateY(370px);
+  }
+}
+
+@keyframes titan {
+  0% {
+    left: -400px;
+  }
+
+  33% {
+    left: -400px;
+  }
+
+  43% {
+    left: 400px;
+  }
+
+  73% {
+    left: 400px;
+  }
+
+  83% {
+    left: -400px;
+  }
+
+  100% {
+    left: -400px;
+  }
+}
+
+@keyframes titan_eye {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  33% {
+    transform: rotate(-10deg);
+  }
+
+  43% {
+    transform: rotate(10deg);
+  }
+
+  73% {
+    transform: rotate(10deg);
+  }
+
+  83% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+.banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  padding: 0 $space-border-mb;
+  position: relative;
+  height: 440px;
+
+  &-content {
+    text-align: center;
+  }
+
+  &-description {
+    &__title {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    &__sub-title {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  }
+
+  &-button {
+    margin-top: 50px;
+
+    &__btn {
+      border-width: 2px !important;
+      font-size: 1.5rem;
+      min-width: 213px;
+    }
+  }
+
+  &__btn {
+    display: none;
+    bottom: 25px;
+    margin: 0 0 0 -10px;
+    font-size: 2rem;
+    padding: 0;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+
+    &__arrow-up {
+      color: $color-white;
+      margin: 0;
+    }
+  }
+
+  .scene {
+    display: none;
+    @extend %absPosition;
+
+    perspective: 2600px;
+    width: 500px;
+    height: 500px;
+
+    &_titanShadow {
+      @extend %absPosition;
+
+      width: $titanSize;
+      height: $titanSize / 4;
+      border-radius: 100%;
+      transform-style: preserve-3d;
+      box-shadow: 0px 200px 20px #291863;
+      animation: titan 6s infinite ease;
+      bottom: 400px;
+    }
+
+    .t_wrap {
+      animation: titanWrap 6s infinite ease;
+    }
+
+    &_titan {
+      @extend %absPosition;
+
+      width: $titanSize;
+      height: $titanSize;
+      border-radius: $titanSize / 2;
+      background: #a5c6ff;
+      transform-style: preserve-3d;
+      box-shadow: 0px 0px 0px 4px rgba(169, 187, 236, 0.38823529411764707) inset,
+        -30px -20px 50px #637bff inset;
+      animation: titan 6s infinite ease;
+      top: -220px;
+
+      & .eyes {
+        animation: titan_eye 6s infinite ease;
+
+        & .eye {
+          @extend %eye;
+
+          &.eye--left {
+            left: -34px;
+            bottom: -120px;
+          }
+
+          &.eye--right {
+            left: 34px;
+            bottom: -120px;
+          }
+        }
+      }
+    }
+
+    &_saturn {
+      @extend %absPosition;
+
+      width: $saturnSize;
+      height: $saturnSize;
+      border-radius: $saturnSize / 2;
+      background: white;
+      transform-style: preserve-3d;
+      box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.32941176470588235) inset,
+        -30px -20px 50px #a5adff inset;
+      animation: saturn 0.6s infinite linear;
+
+      &__shadow {
+        @extend %absPosition;
+
+        width: $saturnSize;
+        height: $saturnSize / 4;
+        border-radius: 100%;
+        box-shadow: 0 150px 40px #291863;
+      }
+
+      &__shadowRing {
+        @extend %absPosition;
+
+        width: $saturnRingSize;
+        height: $saturnSize / 8;
+        border-radius: 100%;
+        box-shadow: 0 150px 40px #291863;
+        left: -100px;
+        animation: ringShadow 0.6s infinite linear;
+      }
+
+      &__face {
+        @extend %absPosition;
+
+        width: $saturnSize;
+        height: $saturnSize;
+        border-radius: $saturnSize / 2;
+        overflow: hidden;
+
+        & .face_clip {
+          position: relative;
+          top: 95px;
+          left: 14px;
+          transform: rotate(8deg);
+          animation: face 3.6s infinite linear, faceTilt 0.9s infinite linear;
+
+          & .eye {
+            @extend %eye;
+          }
+
+          & .mouth {
+            @extend %absPosition;
+
+            width: 15px;
+            height: 10px;
+            top: -5px;
+            background: #ea0e61;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 0 6px 0px #53487a inset;
+          }
+        }
+      }
+
+      &__sparks {
+        @extend %absPosition;
+
+        transform: translateZ(-100px);
+
+        & .spark {
+          &:nth-of-type(odd) {
+            background: white;
+          }
+
+          @extend %absPosition;
+
+          width: 20px;
+          height: 20px;
+          border-radius: 10px;
+          background: #00f7ff;
+
+          @for $i from 1 through 20 {
+            @keyframes spark--#{$i} {
+              from {
+                transform: scale(1);
+              }
+              to {
+                left: random(400) - 200 + 0px;
+                top: random(400) - 200 + 0px;
+                transform: scale(0);
+              }
+            }
+
+            &:nth-of-type(#{$i}) {
+              animation: spark--#{$i} 1s ($i / 10) + 0s infinite;
+            }
+          }
+        }
+      }
+
+      &__ring {
+        @extend %absPosition;
+
+        transform: rotateX(84deg) rotateY(8deg);
+        transform-origin: 50% $saturnRingSize / 2 - 0px;
+        animation: ring 0.6s infinite linear;
+        top: -80px;
+
+        & .small {
+          @extend %absPosition;
+
+          animation: spin 0.6s infinite linear;
+          transform-origin: 50% $saturnRingSize / 2 + 30;
+          top: -50px;
+
+          &_part {
+            @for $i from 1 through 40 {
+              &:nth-of-type(#{$i}) {
+                transform: rotate(2deg * $i);
+                height: 10px - ($i / 4);
+              }
+            }
+
+            @extend %absPosition;
+
+            width: 30px;
+            background: #08f7ff;
+            transform-origin: 50% $saturnRingSize / 2 + 30;
+          }
+        }
+
+        & .layer {
+          position: relative;
+
+          &:nth-of-type(1) {
+            & .layer_part {
+              background: #08ffff;
+            }
+          }
+
+          &:nth-of-type(2) {
+            & .layer_part {
+              background: #08ffff;
+            }
+          }
+
+          @for $i from 2 through 4 {
+            &:nth-of-type(#{$i}) {
+              top: 30px - (12px * $i);
+            }
+          }
+
+          &_part {
+            @extend %absPosition;
+
+            width: 20px;
+            height: $saturnRingWidth;
+            background: #21ced2;
+            transform-origin: 50% $saturnRingSize / 2;
+
+            @for $i from 1 through $saturnRingSegments {
+              &:nth-of-type(#{$i}) {
+                transform: translateY(-50%)
+                  rotate(360 / $saturnRingSegments * $i + 0deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-banner {
+  .modal-header,
+  .modal-content {
+    border: 0;
+    background: transparent;
+  }
+
+  .modal-header {
+    .close {
+      border: 1px solid $color-silver-dark;
+      border-radius: 50%;
+      background: $color-white;
+      padding: 0;
+      position: absolute;
+      right: 8px;
+      top: 36px;
+      opacity: 1;
+      z-index: 1;
+      height: 38px;
+      width: 38px;
+
+      &:hover,
+      &:focus {
+        background: $color-silver-dark;
+        opacity: 1;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+    margin: 1rem;
+
+    .banner {
+      height: 476px;
+    }
+  }
+}
+
+// Block @media
+@include media-breakpoint-up(md) {
+  .banner {
+    height: 572px;
+
+    &-content {
+      // margin-left: 17%;
+      max-width: 509px;
+    }
+
+    &__btn {
+      top: 1px;
+      margin: 0 0 0 -22px;
+      font-size: 1.5rem;
+    }
+
+    .scene {
+      @include media-breakpoint-up(md) {
+        margin-left: 50%;
+        display: block;
+      }
+    }
+  }
+
+  .modal-banner {
+    max-width: 80%;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .banner {
+    padding: 0 $space-border-dt;
+  }
+}

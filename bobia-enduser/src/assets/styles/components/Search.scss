@@ -1,0 +1,160 @@
+.book-cover {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.search-category {
+  .row {
+    margin: 0;
+  }
+
+  &__title,
+  &__view-more {
+    padding: 0 $space-border-mb;
+  }
+
+  &__title {
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__view-more {
+    color: $color-main;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      color: $color-main;
+      text-decoration: underline;
+    }
+  }
+
+  &__block {
+    padding: ($space-border-mb/2) $space-border-mb;
+
+    &__link {
+      display: block;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      height: 250px;
+
+      .overlay {
+        position: absolute;
+        padding: 0 15px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(116, 55, 127, 0.25);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        height: 20%;
+        text-align: center;
+        transition: 0.5s ease;
+      }
+    }
+
+    &__title {
+      color: $color-white;
+      font-size: 1.4rem;
+      width: 100%;
+    }
+
+    &__img {
+      @extend .book-cover;
+    }
+  }
+}
+
+.search-book {
+  .row {
+    margin: 0;
+  }
+
+  &__block {
+    display: flex;
+    padding: ($space-border-mb/2) $space-border-mb;
+
+    &__link {
+      display: block;
+      height: 157px;
+      width: 150px;
+
+      img {
+        @extend .book-cover;
+      }
+    }
+
+    &__content {
+      padding: 0 0 0 15px;
+
+      .title {
+        color: $color-main;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+
+      .summary {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .search-category {
+    &__title,
+    &__view-more {
+      padding: 0;
+    }
+
+    &__block {
+      padding: 10px;
+
+      &__link {
+        .overlay {
+          height: 0;
+          min-height: 0;
+        }
+
+        &:hover {
+          .overlay {
+            min-height: 20%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .search-category {
+    .row {
+      margin: 0 -10px;
+    }
+  }
+
+  .search-book {
+    .row {
+      margin: 0 -10px;
+    }
+
+    &__block {
+      padding: 10px;
+
+      &:hover {
+        background: rgba(116, 55, 127, 0.25);
+        transition: 0.3s all;
+      }
+
+      &__link {
+        height: 235px;
+        width: 200px;
+      }
+    }
+  }
+}

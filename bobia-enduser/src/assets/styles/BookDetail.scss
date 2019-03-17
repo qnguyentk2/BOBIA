@@ -1,0 +1,113 @@
+.Book-Detail {
+  .Block {
+    overflow: visible;
+
+    &-header {
+      margin-bottom: 15px;
+    }
+
+    &-Book {
+      .btn {
+        margin-right: 10px;
+      }
+
+      .Book__title {
+        font-size: 3rem;
+        color: $color-main;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+    }
+
+    &-Content {
+      .btn {
+        margin-top: 15px;
+      }
+    }
+
+    &-Appoints {
+      margin: 2rem 0 0 0;
+      padding: 0 1.5rem;
+
+      .Book__rating {
+        border: 0;
+        text-align: left;
+      }
+    }
+
+    &-Author {
+      margin: 20px 0;
+
+      &__image {
+        margin: 0 0 10px 0;
+      }
+
+      &__name {
+        display: inline-block;
+        font-size: 1.3rem;
+        text-align: left;
+        vertical-align: middle;
+        margin-bottom: 10px;
+      }
+
+      img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+      }
+
+      &__content {
+        padding: 0;
+      }
+    }
+  }
+
+  .Book {
+    &__rating {
+      border-top: 1px solid $color-alto;
+      padding-top: 10px;
+      text-align: center;
+
+      .ico {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__just-read {
+      display: block;
+    }
+  }
+
+  .see-more {
+    font-size: 1.2rem;
+    color: $color-main;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .slick-list {
+    margin: 0 -1rem;
+  }
+
+  .lazy-image__container {
+    height: auto;
+  }
+
+  &-share-like {
+    margin-top: 10px;
+
+    .dropdown {
+      display: inline-block;
+
+      &.show {
+        display: inline-block !important;
+      }
+    }
+  }
+}

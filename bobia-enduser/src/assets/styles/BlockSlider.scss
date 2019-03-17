@@ -1,0 +1,138 @@
+.block-slider {
+  background-color: $color-alabaster;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px $space-border-mb 40px;
+  position: relative;
+
+  .Block-header__text {
+    position: relative;
+    top: -10px;
+  }
+
+  .BooksBlock {
+    display: block;
+    margin-bottom: 0;
+    overflow: visible;
+  }
+
+  .Book {
+    padding: 0 15px;
+    border: 0;
+    margin-bottom: 0;
+
+    &__title {
+      margin-bottom: 7px;
+      font-size: 1.6rem;
+    }
+
+    &__image {
+      img {
+        max-height: 250px;
+        object-fit: cover;
+      }
+      &__custom-img {
+        max-height: 100px !important;
+      }
+    }
+
+    .status-item {
+      border: 0;
+    }
+  }
+
+  .Book-appoint {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+
+    &:first-child {
+      border-bottom: 1px solid $color-alto;
+    }
+  }
+
+  .Book-appoint {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .slick-dots {
+    text-align: center;
+    margin-top: 20px;
+
+    li {
+      display: inline-block;
+      margin: 0 5px;
+
+      button {
+        border: 1px solid $color-gray;
+        text-indent: -9999px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        padding: 0;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background-color: $color-gray;
+        }
+      }
+    }
+  }
+
+  .Block-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  border: 0;
+  background: transparent;
+  text-indent: -9999px;
+  width: 14px;
+  height: 14px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:before {
+    content: '';
+    text-indent: 0;
+    float: left;
+  }
+
+  &.slick-prev {
+    left: -22px;
+
+    &:before {
+      @include arrow(10px, 1px, left, $color-black);
+    }
+  }
+
+  &.slick-next {
+    right: -12px;
+
+    &:before {
+      @include arrow(10px, 1px, right, $color-black);
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .block-slider {
+    margin-left: -$space-border-dt;
+    margin-right: 0;
+    padding: 20px $space-border-dt 40px;
+  }
+}

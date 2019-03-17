@@ -1,0 +1,12 @@
+{
+  "book": {
+    "newChapter": "Chương Mới"
+  },
+  "welcome": {
+    "intro": "Intro from to",
+    "title": "Test translate"
+  },
+  "chapter": {
+    "chapterNumber": "Chương {{number}}"
+  }
+}

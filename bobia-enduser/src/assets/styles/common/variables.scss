@@ -1,0 +1,68 @@
+$color-black: #000;
+$color-white: #fff;
+$color-main: #74377f;
+$color-main-light: #b033c7;
+$color-text: $color-black;
+$color-alto: #dedede;
+$color-alto-light: #dddddd;
+$color-alto-dark: #d8d8d8;
+$color-scorpion: #605e5e;
+$color-gray: #8a8a8a;
+$color-trout: #495057;
+$color-silver: #a8a8a8;
+$color-silver-dark: #ccc;
+$color-silver-dark-20: rgba(204, 204, 204, 0.2);
+$color-silver-light: #c4c4c4;
+$color-corduroy: #696a6a;
+$color-dove-gray: #6d6d6d;
+$color-ghost: #ced4da;
+$color-dusty-gray: #979797;
+$color-gallery: #ededed;
+$color-mischka: #d3d3de;
+$color-mercury: #e6e5e5;
+$color-mercury-light: #e5e5e5;
+$color-seashell: #f1f1f1;
+$color-alabaster: #f5f5f5;
+$color-white-linen: #f7ece4;
+$color-mandy: #ed5565;
+$color-google: #d34836;
+$color-facebook: #4b76bd;
+$color-silver-chalice: #a2a1a1;
+$color-silver-chalice-dark: #a3a3a3;
+$color-gray: #7e7e7e;
+$color-jazzberry-jam: #c00d6b;
+$color-tahiti-gold: #ee870d;
+$color-alpha-white: rgba(255, 255, 255, 0.25);
+$color-alpha-black-50: rgba(0, 0, 0, 0.5);
+$color-alpha-black-14: rgba(0, 0, 0, 0.14);
+$color-alpha-black-25: rgba(0, 0, 0, 0.25);
+$color-alpha-main: rgba(0, 166, 135, 0.15);
+$color-medium-purple: #936cd7;
+$color-golden-rod: #dba633;
+$color-forest-green: #1e8c2e;
+$color-dark-red: #8c0002;
+$color-port-gore: #24245a;
+$color-curious-blue: #22aae3;
+$color-golder-grass: #e3aa20;
+$color-mandy: #e55e5e;
+$color-nobel: #b7b7b7;
+$color-scorpion: #585858;
+$color-emperor: #545454;
+
+$box-shadow: 0 10px 15px -9px grey;
+
+// gradient
+$gradient-btn: linear-gradient(to right, $color-main, $color-port-gore);
+
+// margin
+$space-border: 25px;
+$space-border-mb: 22px;
+$space-border-dt: 43px;
+
+// width
+$width-search-mb: 195px;
+$width-search-dt: 290px;
+
+// icon
+$pathImg: '../images/';
+$pathIcon: '../images/icons';

@@ -1,0 +1,64 @@
+.Pagination {
+  margin-top: 20px;
+  clear: both;
+  overflow: hidden;
+  float: right;
+
+  &.text-right {
+    text-align: right;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 5px;
+
+    &:hover {
+      a {
+        color: $color-main;
+        font-weight: 700;
+      }
+    }
+
+    .middle {
+      margin: 20px;
+    }
+
+    &.active {
+      a {
+        font-weight: 700;
+        color: $color-main;
+      }
+    }
+
+    a {
+      color: $color-alpha-black-50;
+
+      .ico {
+        margin-right: 0;
+        color: $color-white;
+      }
+    }
+
+    &.prev {
+      display: none;
+
+      a {
+        margin-right: 0;
+      }
+    }
+
+    &.next {
+      font-weight: bold;
+
+      a {
+        margin-right: 0;
+      }
+    }
+  }
+}

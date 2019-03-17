@@ -1,0 +1,7 @@
+.notification-item {
+  cursor: pointer;
+
+  &:hover {
+    color: $color-main;
+  }
+}

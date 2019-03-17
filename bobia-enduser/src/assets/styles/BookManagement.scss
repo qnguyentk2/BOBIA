@@ -1,0 +1,368 @@
+.book-management {
+  font-size: 1.2rem;
+
+  .book-item {
+    color: $color-emperor;
+    background: $color-alabaster;
+    box-shadow: 0 2px 15px $color-alpha-black-14;
+    padding: 0 13px;
+    margin: 22px 0 0;
+    font-size: 1.2rem;
+    position: relative;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  .book-info,
+  .chapter-info {
+    border-bottom: 1px solid $color-silver-light;
+
+    &__book-created,
+    &__order-number {
+      font-weight: 700;
+    }
+
+    &__book-created {
+      &__name {
+        display: block;
+        font-weight: 700;
+      }
+    }
+
+    &__order-number {
+      display: none;
+    }
+
+    &__status,
+    &__personal {
+      display: inline-block;
+      margin: 15px 0;
+    }
+
+    &__status {
+      font-weight: 700;
+
+      &.draft {
+        color: $color-medium-purple;
+      }
+
+      &.pending {
+        color: $color-text;
+      }
+
+      &.published {
+        color: $color-main;
+      }
+
+      &.refused {
+        color: $color-mandy;
+      }
+    }
+
+    &__personal {
+      clear: both;
+      float: right;
+
+      .css-10nd86i {
+        display: inline-block;
+
+        .css-vj8t7z {
+          border-radius: 0;
+        }
+
+        .css-1aya2g8,
+        .css-2o5izw {
+          cursor: pointer;
+          border-radius: 0;
+
+          &:hover,
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
+    &__action {
+      &__menu {
+        width: 70%;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      &__block {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+
+        &__ico {
+          color: $color-main;
+        }
+
+        &__btn {
+          background: transparent;
+          border: 0;
+          border-radius: 0;
+
+          &:focus {
+            background: transparent;
+          }
+
+          &:last-child {
+            // border-bottom: 1px solid $color-silver-light;
+            // border-top: 1px solid $color-silver-light;
+          }
+        }
+        .book-info__menu-action {
+          position: absolute;
+          right: 2.2rem;
+          top: 2rem;
+          background-color: $color-white;
+          padding: 1rem;
+          box-shadow: 0 2px 15px $color-alpha-black-14;
+          animation-name: show_menu;
+          animation-duration: 4s;
+          z-index: 1;
+        }
+      }
+    }
+
+    &__menu-action {
+      position: absolute;
+      right: 4.2rem;
+      top: 4rem;
+      background-color: $color-white;
+      padding: 1rem;
+      box-shadow: 0 2px 15px $color-alpha-black-14;
+      animation-name: show_menu;
+      animation-duration: 4s;
+      z-index: 1;
+      // display: none;
+    }
+    @keyframes show_menu {
+      0% {
+        display: none;
+      }
+      25% {
+        background-color: white;
+        display: block;
+      }
+      50% {
+        display: block;
+        background-color: white;
+      }
+      100% {
+        display: block;
+        background-color: white;
+      }
+    }
+  }
+
+  .book-rating,
+  .chapter-rating {
+    padding: 12px 8px;
+
+    .favorite-number,
+    .subcribe-number {
+      color: $color-main;
+      margin: 0 23px 0 0;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .rating-list {
+      color: $color-black;
+      display: flex;
+
+      .rating-item {
+        display: flex;
+        align-items: center;
+        margin: 0 22px 0 0;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        &__ico {
+          color: $color-black;
+          margin: 0 8px 0 0;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .drop-down {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 1;
+      cursor: pointer;
+
+      &__icon {
+        color: $color-black;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.css-15k3avv {
+  z-index: 9999;
+}
+
+.chapter-block {
+  padding: 15px 20px;
+  background-color: #f7f7f7;
+
+  .chapter-title {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &__title {
+      color: $color-main;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    &__btn {
+      border-width: 2px;
+      padding: 4.5px 15px;
+      min-width: 150px;
+      font-weight: 700;
+    }
+  }
+
+  .chapter-list {
+    max-height: 406px;
+    // padding: 0 20px 0 0;
+    overflow: auto;
+    padding-bottom: 80px;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 9px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      border-radius: 22px;
+      background: $color-alabaster;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 22px;
+      background: $color-alto-dark;
+
+      &:hover {
+        background: $color-alpha-black-25;
+      }
+    }
+
+    .chapter-item {
+      &:first-child {
+        .chapter-info {
+          padding: 0 0 18px 0;
+          color: $color-black;
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+}
+
+.book-pagination {
+  .Pagination {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.favorite-book {
+  padding: 2rem 0 2rem 0;
+  &__item {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 2rem 0 2rem 0;
+  }
+}
+
+// Block @media
+@include media-breakpoint-up(md) {
+  .book-management {
+    .book-info,
+    .book-rating,
+    .chapter-info {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .book-info {
+      text-align: center;
+      justify-content: space-between;
+    }
+
+    .chapter-rating {
+      flex-basis: 13%;
+    }
+
+    .book-info,
+    .chapter-info {
+      &__order-number {
+        display: block;
+        flex-basis: 3%;
+      }
+
+      &__book-created {
+        border-left: 1px solid $color-silver-light;
+        padding: 0 0 0 10px;
+        font-weight: normal;
+        text-align: left;
+        // flex-basis: 50%;
+        width: 450px;
+      }
+
+      &__personal {
+        width: 150px;
+      }
+
+      &__action {
+      }
+
+      &__status {
+        width: 130px;
+      }
+
+      &__chapter-number {
+        // flex-basis: 12%;
+        width: 180px;
+      }
+
+      &__personal {
+        margin: 0;
+
+        .css-10nd86i {
+          display: block;
+
+          .css-1aya2g8,
+          .css-2o5izw {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .book-management {
+    .book-container {
+      margin: 0 $space-border-dt;
+    }
+  }
+}

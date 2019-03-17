@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+@keyframes animationSupperman {
+  0% {
+    left: -150px;
+    top: 55%;
+  }
+  10% {
+    top: 53%;
+  }
+  20% {
+    top: 58%;
+  }
+  30% {
+    top: 53%;
+  }
+  40% {
+    top: 58%;
+  }
+  50% {
+    top: 53%;
+  }
+  60% {
+    top: 58%;
+  }
+  70% {
+    top: 53%;
+  }
+  80% {
+    top: 58%;
+  }
+  90% {
+    top: 53%;
+  }
+  100% {
+    left: 110%;
+    top: 55%;
+  }
+}
+@keyframes animationStar {
+  0% {
+    box-shadow: 0px 0px 5px #fff;
+  }
+  20% {
+    box-shadow: 0px 0px 35px #fff;
+  }
+  40% {
+    box-shadow: 0px 0px 5px #fff;
+  }
+  60% {
+    box-shadow: 0px 0px 35px #fff;
+  }
+  80% {
+    box-shadow: 0px 0px 5px #fff;
+  }
+  100% {
+    box-shadow: 0px 0px 35px #fff;
+  }
+}
+
+.wrapper-black {
+  background-image: linear-gradient(
+    to right top,
+    #0f1011,
+    #031120,
+    #00112e,
+    #000e39,
+    #120541
+  );
+  overflow: hidden;
+}
+.wrapper-500 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  font-family: 'Merriweather', serif;
+  .supper-man {
+    img {
+      width: 150px;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 55%;
+      animation: animationSupperman 6s infinite linear;
+    }
+  }
+  .star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    right: 0;
+    animation: animationStar 2s infinite linear;
+    z-index: -1;
+  }
+  .title {
+    color: #fff;
+    font-size: 130px;
+    margin-top: 40px;
+  }
+  p {
+    font-size: 22px;
+    color: #fff;
+  }
+  .go-back {
+    padding: 10px 30px;
+    border: 0px;
+    background: #880000;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s all;
+    font-family: 'Merriweather', serif;
+    &:hover {
+      background: #660000;
+    }
+    &:active {
+      transform: translate(-5px, 5px);
+    }
+  }
+}

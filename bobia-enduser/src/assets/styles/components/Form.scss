@@ -1,0 +1,131 @@
+.form {
+  &-control {
+    border-radius: 7px;
+    padding: 7px 15px;
+  }
+
+  &-group {
+    clear: both;
+
+    .redirect-link {
+      color: $color-main !important;
+      cursor: pointer;
+      margin-left: 5px;
+      line-height: 38px;
+    }
+
+    .check-block {
+      cursor: pointer;
+    }
+  }
+
+  &-input {
+    border-radius: 7px;
+    border: 1px solid $color-mercury;
+    color: $color-black;
+    padding: 8px 20px;
+    font-size: 1.3rem;
+    width: 100%;
+
+    &:focus {
+      border-radius: 7px;
+    }
+
+    &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: $color-silver-chalice;
+    }
+    &::-moz-placeholder {
+      /* Firefox 19+ */
+      color: $color-silver-chalice;
+    }
+    &:-ms-input-placeholder {
+      /* IE 10+ */
+      color: $color-silver-chalice;
+    }
+    &:-moz-placeholder {
+      /* Firefox 18- */
+      color: $color-silver-chalice;
+    }
+  }
+}
+
+// select dropdown options
+.Select {
+  width: 170px;
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: middle;
+
+  &.is-focused:not(.is-open) > .Select-control {
+    border-color: $color-main;
+    box-shadow: none;
+  }
+
+  .Select-control {
+    width: 170px;
+    height: 30px;
+    border: 1px solid $color-main;
+  }
+
+  &.has-value.Select--single
+    > .Select-control
+    .Select-value
+    .Select-value-label,
+  &.has-value.is-pseudo-focused.Select--single
+    > .Select-control
+    .Select-value
+    .Select-value-label {
+    color: $color-main;
+  }
+
+  .Select-placeholder,
+  &--single > .Select-control .Select-value {
+    line-height: 27px;
+    color: $color-main;
+  }
+
+  .Select-option {
+    &.is-selected {
+      background-color: $color-alpha-main;
+    }
+
+    &.is-focused {
+      background-color: $color-main;
+      color: $color-white;
+    }
+  }
+
+  .Select-arrow {
+    border: 0;
+    /* stylelint-disable */
+    font-family: 'bobia' !important;
+    /* stylelint-enable */
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    color: $color-main;
+
+    &:before {
+      content: $ico-chevron-down;
+    }
+  }
+
+  .Select-input {
+    height: 28px;
+  }
+}
+
+// Block @media
+@include media-breakpoint-up(md) {
+  .form {
+    &-input {
+      font-size: 1rem;
+    }
+  }
+}

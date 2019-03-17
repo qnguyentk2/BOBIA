@@ -1,0 +1,243 @@
+.Comment {
+  margin: 20px 0;
+
+  &__width {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    border-bottom: 1px solid $color-alpha-black-50;
+    padding: 10px 0;
+    margin-bottom: 30px;
+  }
+
+  &__write {
+    overflow: hidden;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      border: 1px solid $color-black;
+      color: $color-corduroy;
+      height: 67px;
+      padding: 8px;
+      padding-right: 20px;
+
+      &__wrapper {
+        display: flex;
+        flex-direction: row;
+      }
+
+      &.isFocus {
+        height: 200px;
+      }
+
+      &__ava {
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+        margin-right: 8px;
+      }
+
+      &__input-wrapper {
+        display: flex;
+        .input-box {
+          border: 0;
+        }
+      }
+
+      &__area-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__textarea {
+        border: 0;
+        width: 579px;
+        padding-top: 15px;
+        height: 135px;
+        resize: none;
+      }
+
+      &__btn-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+    }
+
+    &__btn {
+      width: 108px;
+      height: 34px;
+    }
+  }
+
+  .btn-cancel {
+    background-color: $color-white;
+    border: 2px solid $color-main;
+    color: $color-main;
+    font-size: bold;
+    letter-spacing: 15;
+  }
+  .btn-submit {
+    background-color: $color-main;
+    color: $color-white;
+    font-size: bold;
+    letter-spacing: 15;
+  }
+
+  &__item {
+    clear: both;
+    margin: 47px 15px 15px 15px;
+    &__header {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__left {
+      margin-right: 15px;
+      // flex: 1;
+
+      img {
+        width: 48px !important;
+        height: 48px;
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+    }
+
+    &__right {
+      // padding-left: 50px;
+      flex: 15;
+    }
+
+    &__author {
+      font-weight: 700;
+      color: $color-text;
+      display: block;
+      letter-spacing: 0.75px;
+      font-size: 1.4rem;
+    }
+
+    &__date {
+      font-family: $font-family;
+      font-size: 1.3rem;
+      color: $color-alpha-black-50;
+      margin-left: 10px;
+      font-weight: 400;
+      font-size: 1.4rem;
+    }
+
+    &__text {
+      font-size: 1.3rem;
+      color: $color-corduroy;
+      // margin: 15px 0 5px;
+      letter-spacing: 0.75px;
+      // flex-wrap: wrap;
+    }
+
+    &__footer {
+      margin-bottom: 10px;
+      padding-left: 63px;
+    }
+
+    &__action {
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 15px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.75px;
+
+      .number {
+        font-size: 1.2rem;
+        display: inline-block;
+        margin-left: 8px;
+        margin-top: 5px;
+        position: relative;
+        // top: -3px;
+        font-weight: 600;
+        color: black;
+        letter-spacing: 0.75px;
+      }
+
+      .ico {
+        margin-right: 0;
+        font-size: 1.5rem;
+      }
+
+      &.active {
+        color: $color-main;
+
+        .ico,
+        .number {
+          color: $color-main;
+        }
+      }
+    }
+
+    &__reply {
+      padding: 5px 55px 0;
+      margin: 0 -10px;
+      clear: both;
+
+      // img {
+      //   width: 30px;
+      //   height: 30px;
+      // }
+    }
+
+    &__write {
+      margin-top: 10px;
+
+      &__content {
+        font-size: 1.3rem;
+        border: 0;
+        border-bottom: 1px solid $color-alto;
+        width: 100%;
+        color: $color-corduroy;
+      }
+    }
+  }
+
+  &__more {
+    color: black;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    padding-left: 62px;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+
+    .ico-chevron-down {
+      margin-left: 5px;
+      // padding-top: 3px;
+      &:before {
+        content: $ico-chevron-down;
+        color: black;
+      }
+    }
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  .btn {
+    padding: 3px 5px;
+    margin-left: 15px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .Comment {
+    &__width {
+      width: 60%;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.login {
+  color: $color-black;
+  background-color: $color-white;
+  text-align: center;
+
+  .login-form {
+    padding: 20px 0;
+
+    &__title {
+      display: inline-block;
+      margin: 0 auto 10px;
+      font-weight: 700;
+    }
+
+    &__label {
+      float: left;
+    }
+
+    &__radio {
+      clear: both;
+      margin: 5px 0 0;
+
+      div {
+        display: inline-block;
+        margin: 0 15px 0 0;
+        float: left;
+
+        label {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__forgot-pass {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  .login-social {
+    position: relative;
+    border-top: 1px solid $color-mercury;
+    overflow: initial !important;
+
+    &__title {
+      background: $color-white;
+      border: 1px solid $color-mercury;
+      border-radius: 3px;
+      color: $color-black;
+      display: inline-block;
+      position: absolute;
+      padding: 1px 10px;
+      font-size: 0.8rem;
+      margin-left: -58px;
+      top: -12px;
+      left: 50%;
+    }
+
+    &__list {
+      margin: 22px 0 0;
+      display: flex;
+      justify-content: space-evenly;
+
+      &__item {
+        cursor: pointer;
+        display: inline-block;
+        min-width: 140px;
+      }
+    }
+  }
+
+  .social {
+    &-link {
+      color: $color-white;
+      padding: 7px 15px;
+      font-size: 1.3rem;
+      width: 100%;
+
+      &--facebook {
+        background: $color-facebook;
+      }
+
+      &--google {
+        background: $color-google;
+      }
+    }
+
+    &-icon {
+      color: $color-white;
+
+      &--google {
+        font-size: 1.5rem;
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+
+  .note {
+    &-description {
+      line-height: 1;
+    }
+  }
+
+  .logo {
+    &-link {
+      margin: 15px 0 5px;
+    }
+  }
+
+  .btn {
+    &-submit {
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      background: $color-main;
+      padding: 8px 15px;
+    }
+
+    &-primary {
+      margin: 0 !important;
+    }
+  }
+}
+
+// Block @media
+@include media-breakpoint-up(md) {
+  .login {
+    margin: 0 auto;
+    max-width: 430px;
+
+    .login-social {
+      &__list {
+        &__item {
+          min-width: 155px;
+        }
+      }
+    }
+
+    .logo {
+      &-link {
+        margin: 60px 0 15px;
+      }
+    }
+  }
+}

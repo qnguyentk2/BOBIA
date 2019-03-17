@@ -1,0 +1,110 @@
+.Chapter-title {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.Block-filter {
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  .btn {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  .Chapter-title {
+    float: left;
+  }
+
+  .filter {
+    float: right;
+  }
+}
+
+.Chapter-List {
+  background-color: $color-alabaster;
+  padding: 0 10px;
+  box-shadow: $box-shadow;
+
+  .ListOption {
+    &__item {
+      border-bottom: 1px solid $color-alpha-black-50;
+      padding: 5px 0;
+      overflow: hidden;
+      transition: transform 0.1s;
+
+      a {
+        color: $color-text;
+      }
+
+      &:hover {
+        @include media-breakpoint-up(md) {
+          background-color: $color-main;
+          color: $color-white;
+          transform: scale(1.02);
+          a {
+            color: $color-white;
+          }
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__label {
+    color: $color-jazzberry-jam;
+  }
+
+  .left-option {
+    width: 70%;
+    float: left;
+    display: block;
+  }
+
+  .right-option {
+    width: 30%;
+    float: left;
+    text-align: right;
+    display: block;
+  }
+
+  .Chapter-number {
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+  }
+
+  .Chapter-state {
+    font-weight: bold;
+
+    &-draft {
+      color: $color-forest-green;
+    }
+
+    &-pending {
+      color: $color-golder-grass;
+    }
+
+    &-refused {
+      color: $color-dark-red;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .Chapter-List {
+    max-height: 400px;
+    overflow: auto;
+
+    .ListOption {
+      &__item {
+        padding: 10px;
+      }
+    }
+  }
+}

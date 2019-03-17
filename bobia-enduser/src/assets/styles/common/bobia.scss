@@ -1,0 +1,186 @@
+@import 'bobiaVariables';
+
+@font-face {
+  font-family: 'bobia';
+  src: url('../fonts/bobia.ttf?j3fznm') format('truetype'),
+    url('../fonts/bobia.woff?j3fznm') format('woff'),
+    url('../fonts/bobia.svg?j3fznm#bobia') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* use !important to prevent issues with browser extensions that change fonts */
+.ico {
+  /* stylelint-disable */
+  font-family: 'bobia' !important;
+  /* stylelint-enable */
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 3px;
+  color: $color-scorpion;
+}
+
+/* Better Font Rendering =========== */
+.ico-clock2 {
+  &:before {
+    content: $ico-clock2;
+  }
+}
+.ico-bookmark {
+  &:before {
+    content: $ico-bookmark;
+  }
+}
+.ico-chat {
+  &:before {
+    content: $ico-chat;
+  }
+}
+.ico-add {
+  &:before {
+    content: $ico-add;
+  }
+}
+.ico-instagram {
+  &:before {
+    content: $ico-instagram;
+  }
+}
+.ico-file-text {
+  &:before {
+    content: $ico-file-text;
+  }
+}
+.ico-facebook {
+  &:before {
+    content: $ico-facebook;
+  }
+}
+.ico-heart {
+  &:before {
+    content: $ico-heart;
+  }
+}
+.ico-home {
+  &:before {
+    content: $ico-home;
+  }
+}
+.ico-list {
+  &:before {
+    content: $ico-list;
+  }
+}
+.ico-pencil {
+  &:before {
+    content: $ico-pencil;
+  }
+}
+.ico-spinner {
+  &:before {
+    content: $ico-spinner;
+  }
+}
+.ico-star-full {
+  &:before {
+    content: $ico-star-full;
+  }
+}
+.ico-google-plus {
+  &:before {
+    content: $ico-google-plus;
+  }
+}
+.ico-magnifying-glass {
+  &:before {
+    content: $ico-magnifying-glass;
+  }
+}
+.ico-user {
+  &:before {
+    content: $ico-user;
+  }
+}
+.ico-star-empty {
+  &:before {
+    content: $ico-star-empty;
+  }
+}
+.ico-plus {
+  &:before {
+    content: $ico-plus;
+  }
+}
+.ico-chevron-left {
+  &:before {
+    content: $ico-chevron-left;
+  }
+}
+.ico-chevron-right {
+  &:before {
+    content: $ico-chevron-right;
+  }
+}
+.ico-chevron-down {
+  &:before {
+    content: $ico-chevron-down;
+  }
+}
+.ico-chevron-up {
+  &:before {
+    content: $ico-chevron-up;
+  }
+}
+.ico-undo {
+  &:before {
+    content: $ico-undo;
+  }
+}
+.ico-eye {
+  &:before {
+    content: $ico-eye;
+  }
+}
+.ico-twitter {
+  &:before {
+    content: $ico-twitter;
+  }
+}
+.ico-share {
+  &:before {
+    content: $ico-share;
+  }
+}
+.ico-like {
+  &:before {
+    content: $ico-like;
+  }
+}
+.ico-trash {
+  &:before {
+    content: $ico-trash;
+  }
+}
+.ico-pen {
+  &:before {
+    content: $ico-pen;
+  }
+}
+.ico-follower {
+  &:before {
+    content: $ico-follower;
+  }
+}
+.ico-following {
+  &:before {
+    content: $ico-following;
+  }
+}

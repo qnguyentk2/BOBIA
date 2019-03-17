@@ -1,0 +1,57 @@
+.no-margin {
+  margin: 0 !important;
+}
+
+.hidden-xs {
+  display: none !important;
+}
+
+.visible-xs {
+  display: block !important;
+}
+
+.padding-lr-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.status-item {
+  &.dropped {
+    color: $color-mandy;
+  }
+
+  &.completed {
+    color: $color-curious-blue;
+  }
+
+  &.ongoing {
+    color: $color-golder-grass;
+  }
+}
+
+.active,
+.ico.active {
+  color: $color-main;
+}
+
+.pointer,
+button {
+  cursor: pointer;
+}
+
+.pointer {
+  // transition: transform 0.1s;
+
+  &:hover {
+    color: $color-main;
+    // transform: scale(1.1);
+  }
+}
+
+.hover-transform {
+  @include media-breakpoint-up(md) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

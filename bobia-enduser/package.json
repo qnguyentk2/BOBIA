@@ -1,0 +1,111 @@
+{
+  "name": "bobia-enduser",
+  "version": "1.0.0",
+  "description": "Bobia Enduser",
+  "license": "MIT",
+  "author": "Bobia team",
+  "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "build": "react-scripts build",
+    "dev": "cross-env NODE_ENV=development REACT_APP_SERVER_MODE=local react-scripts start",
+    "dev-online": "cross-env NODE_ENV=development REACT_APP_SERVER_MODE=online react-scripts start",
+    "eject": "react-scripts eject",
+    "start-prod": "serve -s build -p 7000",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.4.2",
+    "apollo-client": "^2.4.12",
+    "apollo-link": "^1.2.8",
+    "apollo-link-error": "^1.1.7",
+    "apollo-link-ws": "^1.0.14",
+    "apollo-upload-client": "^10.0.0",
+    "apollo-utilities": "^1.1.2",
+    "bootstrap": "^4.2.1",
+    "braft-editor": "^2.2.5",
+    "cross-env": "^5.2.0",
+    "date-fns": "^1.30.1",
+    "draft-js": "^0.10.5",
+    "draft-js-buttons": "^2.0.1",
+    "draft-js-inline-toolbar-plugin": "^3.0.0",
+    "draft-js-plugins-editor": "^2.1.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "formik": "^1.5.0",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "husky": "^1.3.1",
+    "i18next": "^15.0.1",
+    "i18next-browser-languagedetector": "^3.0.0",
+    "i18next-xhr-backend": "^2.0.0",
+    "invert-color": "^2.0.0",
+    "jquery": "^3.3.1",
+    "lint-staged": "^8.1.3",
+    "lodash.defaults": "^4.2.0",
+    "mobile-detect": "^1.4.3",
+    "moment": "^2.24.0",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
+    "prop-types": "^15.7.1",
+    "query-string": "^6.2.0",
+    "react": "^16.8.1",
+    "react-apollo": "^2.4.1",
+    "react-app-polyfill": "^0.2.1",
+    "react-color": "^2.17.0",
+    "react-datepicker": "^2.1.0",
+    "react-dom": "^16.8.1",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.0.2",
+    "react-helmet": "^5.2.0",
+    "react-highlight-words": "^0.16.0",
+    "react-i18next": "^10.0.4",
+    "react-infinite-scroller": "^1.2.4",
+    "react-messenger-customer-chat": "^0.7.2",
+    "react-motion": "^0.5.2",
+    "react-paginate": "^6.2.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
+    "react-scroll-up": "^1.3.3",
+    "react-select": "^2.3.0",
+    "react-slick": "^0.23.2",
+    "react-toastify": "^4.5.2",
+    "react-tooltip": "^3.9.2",
+    "reactstrap": "^7.1.0",
+    "slick-carousel": "^1.8.1",
+    "source-map-explorer": "^1.6.0",
+    "spected": "^0.7.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "subscriptions-transport-ws": "^0.9.15",
+    "unstated": "^2.1.1",
+    "why-did-you-update": "^1.0.6"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{css,scss}": [
+        "prettier --write",
+        "git add"
+      ],
+      "src/**/*.{js,jsx}": [
+        "eslint --fix",
+        "prettier --single-quote --write",
+        "git add"
+      ]
+    }
+  }
+}

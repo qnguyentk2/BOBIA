@@ -1,0 +1,25 @@
+.Category {
+  flex: 1 1 20%;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 20px;
+
+  &__image {
+    img {
+      height: 100px;
+      width: 100%;
+      object-fit: cover;
+      filter: blur(1px) grayscale(80%);
+    }
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    position: absolute;
+    color: $color-white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 3px 5px $color-black;
+  }
+}

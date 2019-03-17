@@ -1,0 +1,65 @@
+/* Dependencies Style */
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../../node_modules/react-datepicker/src/stylesheets/datepicker.scss';
+@import '../../../node_modules/react-toastify/scss/main.scss';
+
+/* Common Style */
+@import './common/variables.scss';
+@import './common/mixins.scss';
+@import './common/fonts.scss';
+@import './common/bobia.scss';
+@import './common/switcher.scss';
+@import './common/calendar.scss';
+@import './common/ultils.scss';
+@import './common/notification.scss';
+
+/* General Style */
+@import './common/generalStyles.scss';
+
+/* Component styles */
+@import './components/Search.scss';
+@import './components/Buttons.scss';
+@import './components/Form.scss';
+@import './components/Loading.scss';
+@import './components/Notification.scss';
+@import './components/Pagination.scss';
+@import './components/ShareBar.scss';
+@import './components/Comment.scss';
+@import './components/ScrollTop.scss';
+@import './components/Editor/Editor.scss';
+@import './components/Editor/editorStyles.scss';
+@import './components/LazyImage.scss';
+@import './components/SocialBar.scss';
+@import './components/UserFollow.scss';
+
+/* Layout styles */
+@import './About.scss';
+@import './Navigation.scss';
+@import './Menu.scss';
+@import './Footer.scss';
+@import './Book.scss';
+@import './BlockSlider.scss';
+@import './BlockHeader.scss';
+@import './BlockBook.scss';
+@import './BlockAuthor.scss';
+@import './ChapterList.scss';
+@import './Block.scss';
+@import './Category.scss';
+@import './PostList.scss';
+@import './Login.scss';
+@import './Banner.scss';
+@import './UserProfile.scss';
+@import './UserProfileEdit.scss';
+@import './AuthorProfile.scss';
+@import './BookManagement.scss';
+@import './CreateBook.scss';
+
+/* Page styles */
+@import './BookDetail.scss';
+@import './ChapterDetail.scss';
+
+/* Test Layout */
+@import './CommentLayout.scss';
+
+@import './Christmas.scss';

@@ -1,0 +1,19 @@
+.BooksBlock {
+  display: none;
+
+  .Block-header {
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $color-main;
+    }
+    &__list-book {
+      font-size: 2.8rem !important;
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+}

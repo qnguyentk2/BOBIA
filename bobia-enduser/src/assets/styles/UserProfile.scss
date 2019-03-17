@@ -1,0 +1,138 @@
+.user-management {
+  .user-info {
+    color: $color-emperor;
+
+    .user-detail {
+      margin: 0 0 35px;
+      text-align: center;
+
+      &__avatar {
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 10px;
+        height: 100px;
+        width: 100px;
+      }
+
+      &__link {
+        color: $color-main;
+        text-decoration: underline;
+
+        &__ico {
+          color: $color-main;
+        }
+      }
+
+      &__name {
+        font-weight: 700;
+        display: block;
+      }
+    }
+
+    .user-rating {
+      border-top: 1px solid $color-mischka;
+      padding: 22px 0;
+
+      .rating-list {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        .rating-item {
+          display: inline-flex;
+          &__label {
+            margin-left: 0.3rem;
+          }
+          .ico-label {
+            display: flex;
+            align-items: center;
+            .rating-item__ico {
+              font-size: 1.8rem;
+            }
+          }
+
+          &__number {
+            color: $color-emperor;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .user-head {
+    margin: 0 0 17px;
+
+    &__title {
+      color: $color-main;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .user-management {
+    .user-head {
+      margin: 0 0 33px;
+
+      &__title {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .user-management {
+    .user-info {
+      padding: 0 30px;
+    }
+
+    .user-tabs {
+      .nav-item {
+        border-bottom: 1px solid #f0f4f7;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .nav-link {
+          color: $color-main;
+          font-size: 1.4rem;
+          padding: 1rem;
+
+          i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+          }
+
+          .badge {
+            margin-left: 10px;
+            background-color: $color-main;
+          }
+
+          &:hover {
+            background-color: #fafcfd;
+            color: $color-main;
+            border-left: 2px solid $color-main;
+            margin-left: -2px;
+          }
+
+          &.active {
+            border-bottom: none;
+            font-weight: bold;
+            color: $color-main;
+            background-color: #f6f9fb;
+            border-left: 2px solid $color-main;
+            margin-left: -2px;
+          }
+        }
+      }
+    }
+
+    .user-tabs-content {
+      padding-top: 25px;
+    }
+  }
+}

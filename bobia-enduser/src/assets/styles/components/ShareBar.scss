@@ -1,0 +1,70 @@
+.ShareBar {
+  text-align: center;
+
+  &__item {
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+
+    .number-like {
+      font-size: 0.8rem;
+      color: $color-main;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    &.favorite {
+      .ico {
+        color: $color-main;
+      }
+    }
+
+    .ico {
+      font-size: 1.2rem;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .ShareBar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    &__item {
+      display: block;
+      margin-bottom: 10px;
+
+      &.favorite a {
+        border: 1px solid $color-main;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 25px;
+        margin-top: 3px;
+        display: inline-block;
+
+        .ico {
+          margin-right: 0;
+        }
+      }
+
+      .number-like {
+        display: block;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .ShareBar {
+    left: calc(50% - 480px);
+  }
+}

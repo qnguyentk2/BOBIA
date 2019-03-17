@@ -1,0 +1,37 @@
+// Notification
+.Toastify {
+  &__toast {
+    &--success {
+      background: $color-main;
+    }
+
+    &-container {
+      z-index: 2;
+    }
+  }
+}
+
+.valid-feedback,
+.invalid-feedback {
+  display: block;
+  color: $color-mandy;
+  font-size: 1.3rem;
+  text-align: right;
+}
+
+.valid-tooltip,
+.invalid-tooltip {
+  right: 0;
+}
+
+.alert {
+  &-danger {
+    color: $color-mandy;
+    font-size: 1.3rem;
+
+    .close {
+      top: -5px;
+      padding: 5px;
+    }
+  }
+}

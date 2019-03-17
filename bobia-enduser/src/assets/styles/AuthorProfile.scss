@@ -1,0 +1,70 @@
+.AuthorProfile {
+  .Block-Author {
+    margin: 20px 0 0 0;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    &__image {
+      float: none;
+      margin: 0 auto 15px;
+    }
+
+    &__name {
+      font-weight: 700;
+      color: $color-alto;
+      display: block;
+      text-align: center;
+    }
+
+    &__content {
+      border: 0;
+    }
+  }
+
+  &__info {
+    &__wrapper {
+      padding: 15px 20px;
+
+      span {
+        padding: 0 15px;
+      }
+    }
+
+    span {
+      display: block;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .Block-header {
+      border: 0;
+
+      &__title:after {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .Pagination {
+    border-top: 1px solid $color-alpha-black-50;
+    border-bottom: 1px solid $color-alpha-black-50;
+    padding: 15px 0;
+    margin-bottom: 40px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .AuthorProfile {
+    &__info {
+      &__wrapper {
+        border: 1px solid $color-alpha-black-50;
+      }
+    }
+  }
+}

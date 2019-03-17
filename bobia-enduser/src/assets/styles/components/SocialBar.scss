@@ -1,0 +1,33 @@
+.dropdown-subcribe {
+  .dropdown-toggle {
+    &.active {
+      background-color: $color-main !important;
+      color: $color-white !important;
+      border-color: $color-main !important;
+    }
+  }
+
+  .dropdown-menu {
+    color: $color-emperor;
+    background: $color-white;
+    box-shadow: 0 2px 15px $color-alpha-black-14;
+    margin: 0;
+
+    &.show {
+      top: 5px;
+    }
+
+    .dropdown-item {
+      padding: 5px 10px;
+      font-size: 1.3rem;
+
+      &:hover {
+        &:not(.disabled) {
+          background-color: $color-main;
+          color: $color-white;
+          border-color: $color-main;
+        }
+      }
+    }
+  }
+}

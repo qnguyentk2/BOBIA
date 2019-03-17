@@ -1,0 +1,71 @@
+.Block-Author {
+  &__content {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  &__image {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 25%;
+    float: left;
+    margin-right: 5%;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 1rem;
+    display: block;
+    margin-top: 10px;
+  }
+
+  img {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 50%;
+    min-height: 50px;
+  }
+
+  &__info {
+    width: 70%;
+    float: left;
+  }
+
+  &__detail {
+    margin-bottom: 10px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .Block-Author {
+    &__content {
+      text-align: center;
+
+      &__link {
+        display: flex;
+        justify-content: center;
+
+        .lazy-image__container {
+          width: auto;
+        }
+      }
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+      float: none;
+    }
+
+    img {
+      width: 50%;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+
+    &__info {
+      width: 100%;
+    }
+  }
+}

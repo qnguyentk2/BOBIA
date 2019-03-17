@@ -1,0 +1,40 @@
+stages:
+  - build
+  - deploy
+
+build_react:
+  image: node:alpine
+  stage: build
+
+  script:
+    - echo "====== Install dependencied ======"
+    - npm install
+    - echo "====== Build react APP ======"
+    - npm run-script build
+
+  artifacts:
+    name: panel-build
+    paths:
+      - build
+
+deploy_react:
+  image: alpine
+  stage: deploy
+  script:
+    - echo "====== Deploy to production server ======"
+    - apk update && apk upgrade
+    - apk add openssh bash rsync
+    - echo "====== Add target servers secret key ======"
+    - mkdir ~/.ssh
+    - echo $TARGET_SERVER_SECRET_KEY_BASE64 | base64 -d > ~/.ssh/id_rsa
+    - chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
+    - echo "====== Test ssh connection ======"
+    - ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -T "$TARGET_SERVER_USER_HOST"
+    - echo "====== Install rsync on remote server ======"
+    - ssh -T -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null  "$TARGET_SERVER_USER_HOST" 'sudo apt-get install rsync -y'
+    - echo "====== Sync local and remote directory ======"
+    # Ending "/" in string "./build/" is important!
+    - rsync -azPq -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --delete ./build/ "$TARGET_SERVER_USER_HOST:$TARGET_SERVER_PATH"
+    
+  only:
+    - dev

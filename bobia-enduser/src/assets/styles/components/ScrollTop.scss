@@ -1,0 +1,31 @@
+// Scroll top
+.scrollTop {
+  display: none;
+  > div {
+    right: 10px !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 20px $color-gray;
+    line-height: 40px;
+    text-align: center;
+    background-color: $color-white;
+    z-index: 1;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .scrollTop {
+    display: block;
+    > div {
+      bottom: 85px !important;
+      right: calc(25% - 5.5rem) !important;
+    }
+  }
+
+  .one-col .scrollTop {
+    > div {
+      right: calc((100% - 96rem) / 2 - 5rem) !important;
+    }
+  }
+}
