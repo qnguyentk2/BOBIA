@@ -1,0 +1,39 @@
+type Like {
+    id: Int!
+    subjectId: Int!
+    type: EnumLike!
+    user: Int!
+    createdAt: DateTime
+    updatedAt: DateTime
+}
+
+type LikesPaginateResponse {
+    docs: [Like]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type LikesResponse {
+    success: Boolean!
+    likes: LikesPaginateResponse
+    isOwner: Boolean
+}
+
+type LikeResponse {
+    success: Boolean!
+    likeCount: Int
+    isOwner: Boolean
+}
+
+extend type Query {
+    getAllLikes(filters: JSON, filtersType: String, options: JSON): LikesResponse
+}
+
+extend type Mutation {
+    like(like: JSON!): LikeResponse!
+    unlike(unlike: JSON!): LikeResponse!
+}
+
+# This type specifies the entry points into our API

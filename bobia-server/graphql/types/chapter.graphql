@@ -1,0 +1,63 @@
+type Chapter {
+    id: Int!
+    displayOrder: Int
+    title: String!
+    content: String!
+    bookId: Int
+    state: EnumApproveStates!
+    publishedDate: DateTime
+    rating: EnumRatings!
+    foreword: String
+    wordCount: Int
+    viewCount: Int
+    likeCount: Int
+    commentCount: Int
+    slug: String
+    createdUser: User!
+    createdAt: DateTime
+    lastModifiedUser: User
+    updatedAt: DateTime
+    book: Book
+    isDel: Boolean
+    partnership: EnumPartnership
+    refusedReason: String
+    approvedBy: Int
+    isCurrentUserLiked: Boolean
+}
+
+type ChaptersPaginateResponse {
+    docs: [Chapter]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type ChaptersResponse {
+    success: Boolean!
+    chapters: ChaptersPaginateResponse
+    isOwner: Boolean
+}
+
+type ChapterResponse {
+    success: Boolean!
+    chapter: Chapter
+    isOwner: Boolean
+}
+
+
+# This type specifies the entry points into our API
+
+extend type Query {
+    getAllChapters(filters: JSON, filtersType: String, options: JSON): ChaptersResponse
+    getChapter(chapter: JSON!): ChapterResponse
+}
+
+extend type Mutation {
+    createChapter(chapter: JSON!): ChapterResponse!
+    updateChapter(chapter: JSON!): ChapterResponse!
+    updateChapterPartnership(slug: String!, partnership: String!): Response
+    deleteChapter(slug: String!): Response
+    approveChapter(id: Int!): Response
+    refuseChapter(chapter: JSON!): Response
+}

@@ -1,0 +1,64 @@
+enum EnumBookTypes {
+    ONE_SHOT
+    LONG_STORY
+}
+
+enum EnumRatings {
+    PG
+    G
+    M
+    R
+}
+
+enum EnumApproveStates {
+    DRAFT
+    PENDING
+    PUBLISHED
+    REFUSED
+}
+
+enum EnumBookStatus {
+    ONGOING
+    DROPPED
+    COMPLETED
+}
+
+enum EnumPartnership {
+    PUBLIC
+    PRIVATE
+}
+
+enum EnumView {
+    BOOK
+    CHAPTER
+    BLOG
+}
+
+enum EnumLike {
+    BOOK
+    CHAPTER
+    COMMENT
+    BLOG
+}
+
+enum EnumComment {
+    BOOK
+    CHAPTER
+    BLOG
+}
+
+enum EnumFavorite {
+    BOOK
+}
+
+enum NotificationType {
+    USER
+    BOOK
+    CHAPTER
+}
+
+enum NotificationAction {
+    CREATE
+    UPDATE
+    DELETE
+}

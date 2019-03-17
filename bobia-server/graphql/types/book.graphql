@@ -1,0 +1,73 @@
+type Book {
+    id: Int!               # "!" denotes a required field
+    title: String!
+    type: EnumBookTypes!
+    status: EnumBookStatus!
+    summary: String
+    categories: [Category]
+    tags: [Tag]
+    rating: EnumRatings!
+    favoriteCount: Int
+    subcribeCount: Int
+    viewCount: Int
+    likeCount: Int
+    commentCount: Int
+    coverPage: String
+    wordCount: Int
+    chapterCount: Int
+    slug: String
+    createdUser: User!
+    createdAt: DateTime
+    lastModifiedUser: User
+    updatedAt: DateTime
+    sameCategories(limit: Int): [Book]
+    latestChapter: Chapter
+    isDel: Boolean
+    partnership: EnumPartnership
+    isCurrentUserLiked: Boolean
+    isCurrentUserFavorited: Boolean
+    isCurrentUserSubcribed: Boolean
+    totalChaptersCounts: JSON
+}
+
+type BooksPaginateResponse {
+    docs: [Book]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type BooksResponse {
+    success: Boolean!
+    books: BooksPaginateResponse
+    isOwner: Boolean
+}
+
+type BookResponse {
+    success: Boolean!
+    book: Book
+    isOwner: Boolean
+}
+
+# This type specifies the entry points into our API
+extend type Query {
+    getAllBooks(filters: JSON, filtersType: String, options: JSON): BooksResponse
+    getBook(book: JSON!): BookResponse
+}
+
+# The mutation root type, used to define all mutations
+extend type Mutation {
+    createBook(book: JSON!): BookResponse!
+    updateBook(book: JSON!): BookResponse!
+    updateBookPartnership(slug: String!, partnership: String!): Response
+    deleteBook(slug: String!): Response
+}
+
+# The subscription root type, specifying what we can subscribe to
+
+
+
+
+
+

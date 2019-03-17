@@ -1,0 +1,40 @@
+type Category {
+    id: Int!
+    name: String!
+    description: String
+    displayOrder: Int
+    createdAt: DateTime
+    updatedAt: DateTime
+    slug: String
+    isDel: Boolean
+}
+
+type CategoriesPaginateResponse {
+    docs: [Category]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type CategoriesResponse {
+    success: Boolean!
+    categories: CategoriesPaginateResponse
+}
+
+type CategoryResponse {
+    success: Boolean!
+    category: Book
+}
+
+# This type specifies the entry points into our API
+extend type Query {
+    getAllCategories(filters: JSON, filtersType: String, options: JSON): CategoriesResponse
+    getCategory(category: JSON!): CategoryResponse
+}
+
+extend type Mutation {
+    createCategory(category: JSON!): Response!
+    updateCategory(category: JSON!): Response!
+    deleteCategory(categoryId: Int!): Response!
+}

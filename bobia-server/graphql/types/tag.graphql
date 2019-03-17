@@ -1,0 +1,32 @@
+type Tag {
+    id: Int!
+    name: String
+    createdAt: DateTime
+    updatedAt: DateTime
+    isDel: Boolean
+}
+
+type TagsPaginateResponse {
+    docs: [Tag]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type AllTags {
+    success: Boolean!
+    tags: TagsPaginateResponse
+}
+
+extend type Query {
+    getAllTags(filters: JSON, filtersType: String, options: JSON): AllTags
+}
+
+extend type Mutation {
+    createTag(tag: JSON!): Response!
+    updateTag(tag: JSON!): Response!
+    deleteTag(tagId: Int!): Response!
+}
+
+# This type specifies the entry points into our API

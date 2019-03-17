@@ -1,0 +1,23 @@
+type RolePermission {
+    id: Int!
+    roleId: Int!
+    api: [Int]
+    createdAt: DateTime
+    updatedAt: DateTime
+
+    
+}
+
+type RolePermissionResponse {
+    success: Boolean!
+    listAPI: [Api]
+    isOwner: Boolean
+}
+
+extend type Query {
+    getPermissionByRole(roleId: Int): RolePermissionResponse
+}
+
+extend type Mutation {
+    updatePermissionForRole(roleId: Int!,listAPI: [String]!): RolePermissionResponse
+}

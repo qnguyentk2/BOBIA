@@ -1,0 +1,57 @@
+type Favorite {
+    id: Int!
+    subjectId: Int!
+    type: EnumFavorite!
+    user: Int!
+    createdAt: DateTime
+    updatedAt: DateTime
+}
+
+type FavoritesPaginateResponse {
+    docs: [Favorite]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type FavoritesResponse {
+    success: Boolean!
+    favorites: FavoritesPaginateResponse
+    isOwner: Boolean
+}
+
+union FavoriteSubjectsDocs = Book
+
+type FavoriteSubjectsPaginateResponse {
+    docs: [FavoriteSubjectsDocs]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type FavoriteSubjectsResponse {
+    success: Boolean!
+    subjects: FavoriteSubjectsPaginateResponse
+    isOwner: Boolean
+}
+
+type FavoriteResponse {
+    success: Boolean!
+    isOwner: Boolean
+}
+
+extend type Query {
+    getAllFavorites(filters: JSON, filtersType: String, options: JSON): FavoritesResponse
+    getAllFavoriteSubjects(filters: JSON, filtersType: String, options: JSON): FavoriteSubjectsResponse
+}
+
+extend type Mutation {
+    favorite(favorite: JSON!): FavoriteResponse!
+    unfavorite(unfavorite: JSON!): FavoriteResponse!
+    subcribe(subcribe: JSON!): FavoriteResponse!
+    unsubcribe(unsubcribe: JSON!): FavoriteResponse!
+}
+
+# This type specifies the entry points into our API

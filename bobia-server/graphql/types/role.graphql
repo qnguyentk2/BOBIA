@@ -1,0 +1,33 @@
+type Role {
+    id: Int!
+    name: String!
+    description: String
+    createdAt: DateTime
+    updatedAt: DateTime
+    isDel: Boolean
+}
+
+type RolesPaginateResponse {
+    docs: [Role]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type AllRoles {
+    success: Boolean!
+    roles: RolesPaginateResponse
+}
+
+extend type Query {
+    getAllRoles(filters: JSON, filtersType: String, options: JSON): AllRoles
+}
+
+extend type Mutation {
+    createRole(role: JSON!): Response!
+    updateRole(role: JSON!): Response!
+    deleteRole(roleId: Int!): Response!
+}
+
+# This type specifies the entry points into our API

@@ -1,0 +1,41 @@
+stages:
+  - build
+  - deploy
+
+build_server:
+  image: node:alpine
+  stage: build
+  script:
+    # install python to build bcript
+    - apk update && apk upgrade
+    - apk add --no-cache jq python gcc g++ make && npm install -g yarn
+    - echo "====== Install dependencied ======"
+    - npm install
+    - echo "====== Build APP ======"
+    - npm run build
+
+  artifacts:
+    name: panel-build
+    paths:
+      - build
+
+deploy_server:
+  image: keymetrics/pm2:6
+  stage: deploy
+  script:
+    - echo "====== Deploy to production server ======"
+    - apk update && apk upgrade
+    - apk add git openssh bash
+    # Add target server`s secret key
+    - mkdir ~/.ssh
+    - echo $TARGET_SERVER_SECRET_KEY_BASE64 | base64 -d > ~/.ssh/id_rsa
+    - chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
+    - echo "Test ssh connection"
+    - ssh -o StrictHostKeyChecking=no -T "$TARGET_SERVER_USER_HOST"
+    # Delploy
+    - echo "Setup tagget server directories"
+    - pm2 deploy ecosystem.config.js dev setup 2>&1 || true
+    - echo "make deploy"
+    - pm2 deploy ecosystem.config.js dev
+  only:
+    - dev

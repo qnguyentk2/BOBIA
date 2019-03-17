@@ -1,0 +1,31 @@
+type Api {
+    id: Int!
+    name: String!
+    description: String
+    createdAt: DateTime
+    updatedAt: DateTime
+    isDel: Boolean
+}
+
+type ApisPaginateResponse {
+    docs: [Api]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type AllApis {
+    success: Boolean!
+    apis: ApisPaginateResponse
+}
+
+extend type Query {
+    getAllApis(filters: JSON, filtersType: String, options: JSON): AllApis
+}
+
+extend type Mutation {
+    createApi(api: JSON!): Response!
+    updateApi(api: JSON!): Response!
+    deleteApi(apiId: Int!): Response!
+}

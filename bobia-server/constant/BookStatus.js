@@ -1,0 +1,3 @@
+export const BOOK_STATUS_ON_GOING = 'ON_GOING';
+export const BOOK_STATUS_DROPPED = 'DROPPED';
+export const BOOK_STATUS_COMPLETED = 'COMPLETED';

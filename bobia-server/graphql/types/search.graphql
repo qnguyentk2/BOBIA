@@ -1,0 +1,15 @@
+
+
+type searchResult {
+    type: String
+    data: JSON
+
+}
+type SearchResponse {
+    success: Boolean!
+    result: searchResult
+}
+
+extend type Query {
+    search(queries: JSON): SearchResponse
+}

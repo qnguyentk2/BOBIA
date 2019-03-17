@@ -1,0 +1,17 @@
+type ReadingList {
+    id: Int!
+    type: String!
+    userId: Int
+    bookId: Int
+    chapterId: Int
+    progress: Int
+    isDel: Boolean
+    createdAt: DateTime
+    updatedAt: DateTime
+
+    user: User!
+    book: Book!
+    chapter: Chapter
+}
+
+# This type specifies the entry points into our API

@@ -1,0 +1,40 @@
+type Topic {
+    id: Int!
+    name: String!
+    description: String
+    displayOrder: Int
+    createdAt: DateTime
+    updatedAt: DateTime
+    slug: String
+    isDel: Boolean
+}
+
+type TopicsPaginateResponse {
+    docs: [Topic]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type TopicsResponse {
+    success: Boolean!
+    topics: TopicsPaginateResponse
+}
+
+type TopicResponse {
+    success: Boolean!
+    topic: Book
+}
+
+# This type specifies the entry points into our API
+extend type Query {
+    getAllTopics(filters: JSON, filtersType: String, options: JSON): TopicsResponse
+    getTopic(topic: JSON!): TopicResponse
+}
+
+extend type Mutation {
+    createTopic(topic: JSON!): Response!
+    updateTopic(topic: JSON!): Response!
+    deleteTopic(topicId: Int!): Response!
+}

@@ -1,0 +1,58 @@
+type Follow {
+    id: Int!
+    followingUser: Int!
+    user: Int!
+    createdAt: DateTime
+    updatedAt: DateTime
+}
+
+type FollowsPaginateResponse {
+    docs: [Follow]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type FollowsResponse {
+    success: Boolean!
+    follows: FollowsPaginateResponse
+    isOwner: Boolean
+}
+
+type FollowResponse {
+    success: Boolean!
+    followerCount: Int
+    followingCount: Int
+    isOwner: Boolean
+}
+
+type FollowUserPaginateResponse {
+    docs: [User]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type FollowingsResponse {
+    success: Boolean!
+    followings: FollowUserPaginateResponse
+}
+
+type FollowersResponse {
+    success: Boolean!
+    followers: FollowUserPaginateResponse
+}
+extend type Query {
+    getAllFollows(filters: JSON, filtersType: String, options: JSON): FollowsResponse
+    getAllFollowings(filters: JSON, filtersType: String, options: JSON): FollowingsResponse
+    getAllFollowers(filters: JSON, filtersType: String, options: JSON): FollowersResponse
+}
+
+extend type Mutation {
+    follow(follow: JSON!): FollowResponse!
+    unfollow(unfollow: JSON!): FollowResponse!
+}
+
+# This type specifies the entry points into our API

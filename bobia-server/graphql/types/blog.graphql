@@ -1,0 +1,63 @@
+type Blog {
+    id: Int!               # "!" denotes a required field
+    title: String!
+    content: String
+    topics: [Topic]
+    tags: [Tag]
+    viewCount: Int
+    likeCount: Int
+    commentCount: Int
+    coverPage: String
+    wordCount: Int
+    slug: String
+    createdUser: User!
+    createdAt: DateTime
+    lastModifiedUser: User
+    updatedAt: DateTime
+    sameTopics(limit: Int): [Blog]
+    isDel: Boolean
+    partnership: EnumPartnership
+    isCurrentUserLiked: Boolean
+}
+
+type BlogsPaginateResponse {
+    docs: [Blog]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type BlogsResponse {
+    success: Boolean!
+    blogs: BlogsPaginateResponse
+    isOwner: Boolean
+}
+
+type BlogResponse {
+    success: Boolean!
+    blog: Blog
+    isOwner: Boolean
+}
+
+# This type specifies the entry points into our API
+extend type Query {
+    getAllBlogs(filters: JSON, filtersType: String, options: JSON): BlogsResponse
+    getBlog(blog: JSON!): BlogResponse
+}
+
+# The mutation root type, used to define all mutations
+extend type Mutation {
+    createBlog(blog: JSON!): BlogResponse!
+    updateBlog(blog: JSON!): BlogResponse!
+    updateBlogPartnership(slug: String!, partnership: String!): Response
+    deleteBlog(slug: String!): Response
+}
+
+# The subscription root type, specifying what we can subscribe to
+
+
+
+
+
+

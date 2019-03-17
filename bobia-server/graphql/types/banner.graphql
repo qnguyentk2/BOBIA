@@ -1,0 +1,46 @@
+type Banner {
+    id: Int!
+    name: String!
+    title: String
+    titleColor: String
+    content: String
+    contentColor: String
+    cta: String
+    ctaLink: String
+    ctaColor: String
+    bannerUrl: String
+    isActive: Boolean
+    createdAt: DateTime
+    updatedAt: DateTime
+    isDel: Boolean
+}
+
+type BannersPaginateResponse {
+    docs: [Banner]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type AllBanners {
+    success: Boolean!
+    banners: BannersPaginateResponse
+}
+
+type BannerResponse {
+    success: Boolean!
+    banner: Banner
+    isOwner: Boolean
+}
+
+extend type Query {
+    getAllBanners(filters: JSON, filtersType: String, options: JSON): AllBanners
+}
+
+extend type Mutation {
+    createBanner(banner: JSON!): BannerResponse!
+    updateBanner(banner: JSON!): BannerResponse!
+    deleteBanner(bannerId: Int!): Response!
+    updateBannerActive(id: Int!, isActive: Boolean!): Response
+}

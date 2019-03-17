@@ -1,0 +1,11 @@
+/node_modules/
+/uploads/
+/logs/
+.env
+yarn.lock
+*.log
+/dist/
+/build/
+/.idea/
+settings.json
+package-lock.json

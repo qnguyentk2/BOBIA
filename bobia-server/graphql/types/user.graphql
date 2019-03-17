@@ -1,0 +1,73 @@
+type User {
+    id: Int!
+    email: String
+    username: String
+    password: String
+    nickname: String
+    firstname: String
+    lastname: String
+    displayName: String
+    address: String
+    identifyNumber: String
+    phoneNumber: String
+    gender: String
+    birthDate: DateTime
+    biography: String
+    favoriteQuote: String
+    title: String
+    achievement: String
+    blocked: Boolean
+    viewCount: Int
+    likeCount: Int
+    followerCount: Int
+    followingCount: Int
+    roleId: Int
+    role: String
+    facebookId: String
+    googleId: String
+    profileUrl: String
+    slug: String
+    createdAt: DateTime
+    updatedAt: DateTime
+    isDel: Boolean
+    readingList: [ReadingList]
+    isCurrentUserFollowed: Boolean
+}
+
+type UserProfile {
+    success: Boolean!
+    user: User
+    isOwner: Boolean
+}
+
+type UsersPaginateResponse {
+    docs: [User]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type AllUsers {
+    success: Boolean!
+    users: UsersPaginateResponse
+}
+
+type UserResponse {
+    success: Boolean!
+    user: User
+    isOwner: Boolean
+}
+
+extend type Query {
+    getAllUsers(filters: JSON, filtersType: String, options: JSON): AllUsers
+    getUser(user: JSON!): UserResponse
+}
+
+extend type Mutation {
+    updateProfile(user: JSON!): UserProfile!
+    createUser(user: JSON!): Response!
+    updateUser(user: JSON!): Response!
+    deleteUser(userSlug: String!): Response!
+    resetPassword(userSlug: String!): Response!
+}

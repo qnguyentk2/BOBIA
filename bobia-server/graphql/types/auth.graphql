@@ -1,0 +1,32 @@
+type Auth {
+    id: Int!
+    userId: Int
+    sessionId: String
+    token: String!
+    type: String
+    expiredDate: DateTime!
+    ipAddress: String
+    device: String    
+    createdAt: DateTime
+    updatedAt: DateTime
+    user: User!
+}
+
+type resultPermission {
+    apiName: String
+    isAllow: Boolean
+}
+
+type Query {
+    checkAuthen(token: String, portal: String): Response!
+    isAllowed(apiList: [String]): [resultPermission]
+}
+
+type Mutation {
+    checkToken(token: String!): Response!
+    register(user: JSON!): Response!
+    socialLogin(socialUser: JSON!, portal: String): Response!
+    linkAccount(provider: String!, user: JSON!, id: String!): Response!
+    login(usernameOrEmail: String!, password: String!, remember_me: Boolean!, portal: String): Response!
+    logout: Response!
+}

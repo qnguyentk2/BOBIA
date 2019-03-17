@@ -1,0 +1,8 @@
+type Response {
+    success: Boolean!
+    token: String
+    banner: Banner
+    user: User
+    isNew: Boolean
+    isOwner: Boolean
+}

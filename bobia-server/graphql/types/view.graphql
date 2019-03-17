@@ -1,0 +1,37 @@
+type View {
+    id: Int!
+    subjectId: Int
+    type: EnumView
+    user: Int
+    viewCount: Int
+    createdAt: DateTime
+    updatedAt: DateTime
+}
+
+type ViewsPaginateResponse {
+    docs: [View]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type ViewsResponse {
+    success: Boolean!
+    views: ViewsPaginateResponse
+    isOwner: Boolean
+}
+
+type ViewResponse {
+    success: Boolean!
+    viewCount: Int
+    isOwner: Boolean
+}
+
+extend type Query {
+    getAllViews(filters: JSON, filtersType: String, options: JSON): ViewsResponse
+}
+
+extend type Mutation {
+    increaseView(view: JSON!): ViewResponse!
+}

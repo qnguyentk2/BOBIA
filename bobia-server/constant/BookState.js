@@ -1,0 +1,4 @@
+export const BOOK_STATE_DRAFT = 'DRAFT';
+export const BOOK_STATE_PENDING = 'PENDING';
+export const BOOK_STATE_PUBLISHED = 'PUBLISHED';
+export const BOOK_STATE_REFUSED = 'REFUSED';

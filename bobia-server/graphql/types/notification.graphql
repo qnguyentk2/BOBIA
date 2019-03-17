@@ -1,0 +1,46 @@
+type Notification {
+    id: Int!
+    type: NotificationType!
+    action: NotificationAction!
+    sender: User!
+    receiver: User!
+    title: String!
+    content: String!
+    seen: Boolean
+    isDel: Boolean
+    createdAt: DateTime
+    updatedAt: DateTime
+}
+
+type NotificationsPaginateResponse {
+    docs: [Notification]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type NotificationsResponse {
+    success: Boolean!
+    notifications: NotificationsPaginateResponse
+    isOwner: Boolean
+}
+
+type NotificationResponse {
+    success: Boolean!
+    isOwner: Boolean
+}
+
+extend type Query {
+    getAllNotifications(filters: JSON, filtersType: String, options: JSON): NotificationsResponse
+}
+
+extend type Mutation {
+    updateNotification(notification: JSON!): Response!
+}
+
+type Subscription {
+  newNotification(receiver: String!): Notification
+}
+
+# This type specifies the entry points into our API

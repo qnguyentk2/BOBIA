@@ -1,0 +1,14 @@
+{
+  "schemaPath": "schema.graphql",
+  "includes": ["*.graphql"],
+  "extensions": {
+    "endpoints": {
+      "dev": {
+        "url": "http://localhost:7001/graphql",
+        "subscription": {
+          "url": "ws://localhost:7001"
+        }
+      }
+    }
+  }
+}

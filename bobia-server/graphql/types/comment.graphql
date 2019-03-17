@@ -1,0 +1,47 @@
+type Comment {
+    id: Int!
+    parentId: Int
+    content: String!
+    subjectId: Int!
+    type: EnumComment!
+    user: Int!
+    partnership: EnumPartnership
+    likeCount: Int
+    replyCount: Int
+    createdAt: DateTime
+    updatedAt: DateTime
+    createdUser: User
+    isCurrentUserLiked: Boolean
+}
+
+type CommentReponse {
+    success: Boolean!
+    comment: Comment
+    commentCount: Int
+    isOwner: Boolean
+}
+
+type CommentsPaginateResponse {
+    docs: [Comment]
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type CommentsResponse {
+    success: Boolean!
+    comments: CommentsPaginateResponse
+    isOwner: Boolean
+}
+
+# This type specifies the entry points into our API
+
+
+extend type Query {
+    getAllComments(filters: JSON, filtersType: String, options: JSON): CommentsResponse
+}
+
+extend type Mutation {
+    createComment(comment: JSON!): CommentReponse!
+}
